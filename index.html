@@ -3,22 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>公民素養挑戰：二上 L5 我國的地方政府</title>
+    <title>公民素養挑戰：三上 4-2 我國中央政府各權力間如何互動</title>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
     <style>
-        /* --- 🎨 公民科：現代民主法治風格配色 --- */
+        /* --- 🎨 五權分立主題配色：沉穩藍 + 莊嚴金 --- */
         :root {
-            --primary-color: #0056b3;   /* 民主藍 */
-            --secondary-color: #28a745; /* 法治綠 */
-            --bg-color: #f0f2f5;        /* 淺灰藍 */
-            --text-color: #343a40;      /* 深灰黑 */
-            --accent-color: #ffc107;    /* 活力黃 */
-            --correct-color: #28a745;   /* 綠色 */
-            --wrong-color: #dc3545;     /* 紅色 */
-            --locked-color: #6c757d;    /* 灰色 */
-            --music-btn-color: #17a2b8; /* 淺藍 */
-            --favorite-color: #e83e8c;  /* 粉紅 */
+            --primary-color: #1a237e;   /* 沉穩深藍 (象徵五院職權、專業) */
+            --secondary-color: #f9a825; /* 莊嚴金 (象徵憲法、權力制衡) */
+            --bg-color: #f5f5f6;        /* 淺灰白 (理性、客觀) */
+            --text-color: #212121;      /* 深黑灰 (清晰易讀) */
+            --accent-color: #c62828;    /* 警示紅 (彈劾、糾正、制衡) */
+            --correct-color: #2e7d32;   /* 成功綠 */
+            --wrong-color: #c62828;     /* 錯誤紅 */
+            --locked-color: #9e9e9e;    /* 鎖定灰 */
+            --music-btn-color: #5c6bc0; /* 次要藍 */
+            --favorite-color: #ad1457;  /* 收藏紅 */
         }
 
         body { 
@@ -29,7 +29,7 @@
         }
 
         h1 { 
-            font-size: 2.5em; color: var(--primary-color); text-align: center; 
+            font-size: 2.2em; color: var(--primary-color); text-align: center; 
             margin-top: 0; font-weight: bold; letter-spacing: 1px;
             text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
         }
@@ -37,8 +37,8 @@
 
         /* --- 主要容器 --- */
         .quiz-container { 
-            background: rgba(255, 255, 255, 0.98); padding: 30px; border-radius: 20px; 
-            box-shadow: 0 10px 30px rgba(0,0,0,0.15); border: 3px solid #e9ecef; 
+            background: rgba(255, 255, 255, 0.98); padding: 30px; border-radius: 15px; 
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15); border-top: 5px solid var(--secondary-color);
             position: relative; overflow: hidden; min-height: 550px;
         }
 
@@ -48,49 +48,49 @@
         /* --- 按鈕樣式 --- */
         .btn {
             background-color: var(--primary-color); color: #FFF; border: none;
-            padding: 12px 28px; font-size: 1.2em; border-radius: 50px; 
+            padding: 12px 28px; font-size: 1.1em; border-radius: 8px; 
             cursor: pointer; transition: 0.3s; 
             box-shadow: 0 4px 6px rgba(0,0,0,0.15);
             font-family: inherit; font-weight: bold; margin: 8px; display: inline-block; letter-spacing: 1px;
         }
-        .btn:hover { transform: translateY(-3px); box-shadow: 0 6px 12px rgba(0,0,0,0.2); opacity: 0.95; }
+        .btn:hover { transform: translateY(-2px); box-shadow: 0 6px 12px rgba(0,0,0,0.2); opacity: 0.95; background-color: #283593; }
         .btn:active { transform: translateY(1px); box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
         
         .btn-green { background-color: var(--correct-color); }
         .btn-red { background-color: var(--wrong-color); }
-        .btn-gray { background-color: #6c757d; }
-        .btn-blue { background-color: #17a2b8; }
+        .btn-gray { background-color: #78909c; }
+        .btn-blue { background-color: #0277bd; }
         .btn-pink { background-color: var(--favorite-color); }
         
-        .btn-sm { padding: 8px 20px; font-size: 1em; margin: 0 4px; border-radius: 50px;}
+        .btn-sm { padding: 8px 18px; font-size: 0.95em; margin: 0 4px; border-radius: 20px;}
         
         .btn-music { background-color: var(--music-btn-color); opacity: 0.8; transition: all 0.3s ease; }
-        .btn-music.playing { background-color: var(--primary-color); opacity: 1; animation: pulse 2s infinite; }
-        @keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(0, 86, 179, 0.4); } 70% { box-shadow: 0 0 0 15px rgba(0, 86, 179, 0); } 100% { box-shadow: 0 0 0 0 rgba(0, 86, 179, 0); } }
+        .btn-music.playing { background-color: var(--secondary-color); color: #000; opacity: 1; animation: pulse 2s infinite; }
+        @keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(249, 168, 37, 0.4); } 70% { box-shadow: 0 0 0 10px rgba(249, 168, 37, 0); } 100% { box-shadow: 0 0 0 0 rgba(249, 168, 37, 0); } }
 
         input[type="text"] {
-            padding: 12px; font-size: 1.4em; border: 2px solid #ced4da; background-color: #FFF;
-            border-radius: 15px; margin: 15px; font-family: inherit; text-align: center; width: 80%; color: var(--text-color);
+            padding: 12px; font-size: 1.3em; border: 2px solid #b0bec5; background-color: #FFF;
+            border-radius: 8px; margin: 15px; font-family: inherit; text-align: center; width: 80%; color: var(--text-color);
             transition: border-color 0.3s;
         }
-        input[type="text"]:focus { border-color: var(--primary-color); outline: none; }
+        input[type="text"]:focus { border-color: var(--secondary-color); outline: none; }
 
         .quick-login-area { margin-top: 15px; display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
         .user-tag {
-            background: #fff; border: 2px solid var(--primary-color); padding: 8px 15px; border-radius: 30px;
-            cursor: pointer; font-size: 1em; transition: 0.2s; color: var(--primary-color); display: flex; align-items: center; gap: 8px; 
+            background: #e8eaf6; border: 1px solid var(--primary-color); padding: 6px 15px; border-radius: 20px;
+            cursor: pointer; font-size: 0.95em; transition: 0.2s; color: var(--primary-color); display: flex; align-items: center; gap: 8px; font-weight: bold;
         }
         .user-tag:hover { background: var(--primary-color); color: white; }
-        .delete-user { font-size: 0.9em; cursor: pointer; padding: 4px 8px; border-radius: 50%; background: rgba(0,0,0,0.1); transition: 0.2s; }
+        .delete-user { font-size: 0.9em; cursor: pointer; padding: 2px 6px; border-radius: 50%; background: rgba(0,0,0,0.1); transition: 0.2s; }
         .delete-user:hover { background: var(--wrong-color); color: white; transform: scale(1.1); }
 
         .avatar-selection { display: flex; justify-content: center; gap: 20px; margin: 25px 0; }
         .avatar-option {
-            width: 90px; height: 90px; border-radius: 50%; border: 4px solid transparent;
+            width: 80px; height: 80px; border-radius: 50%; border: 4px solid transparent;
             cursor: pointer; transition: 0.3s; object-fit: cover; background: #FFF; padding: 3px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);
         }
         .avatar-option:hover { transform: scale(1.1); }
-        .avatar-option.selected { border-color: var(--primary-color); box-shadow: 0 0 20px rgba(0, 86, 179, 0.3); transform: scale(1.1); }
+        .avatar-option.selected { border-color: var(--secondary-color); box-shadow: 0 0 15px rgba(249, 168, 37, 0.6); transform: scale(1.1); }
 
         /* --- 🖼️ 首頁背景設定 --- */
         #welcome-screen {
@@ -105,27 +105,23 @@
         }
         #welcome-screen::before {
             content: ""; position: absolute; top:0; left:0; width:100%; height:100%;
-            background: rgba(255, 255, 255, 0.85); z-index: 0;
+            background: rgba(255, 255, 255, 0.9); z-index: 0;
         }
         #welcome-screen > * { position: relative; z-index: 1; }
 
         /* --- 🗺️ 闖關地圖背景設定 --- */
         #level-screen {
-            /* 1. 設定背景圖 */
             background-image: url('images/city_map.jpg'); 
             background-color: #e9ecef; 
             background-size: cover; background-position: center; background-repeat: no-repeat;
-            
             border-radius: 15px; padding: 30px; min-height: 500px; 
-            position: relative; overflow: hidden; /* 確保遮罩不溢出 */
+            position: relative; overflow: hidden; 
         }
-        /* 2. 增加半透明白色遮罩，讓地圖當背景但不會干擾按鈕 */
         #level-screen::before {
             content: ""; position: absolute; top:0; left:0; width:100%; height:100%;
-            background: rgba(255, 255, 255, 0.6); /* 0.6 是透明度，可自行調整 */
+            background: rgba(255, 255, 255, 0.7); 
             z-index: 0;
         }
-        /* 3. 確保地圖上的內容浮在遮罩之上 */
         #level-screen > * { position: relative; z-index: 1; }
 
         @media (orientation: portrait) { #level-screen { min-height: 80vh; background-position: center center; } .level-map-container { gap: 30px; margin-top: 40px; } }
@@ -135,64 +131,65 @@
         .level-row.reverse { flex-direction: row-reverse; }
         .level-wrapper { display: flex; align-items: center; position: relative; }
         .map-avatar {
-            position: absolute; top: -70px; left: 50%; transform: translateX(-50%); width: 70px; height: 70px; z-index: 10;
+            position: absolute; top: -60px; left: 50%; transform: translateX(-50%); width: 60px; height: 60px; z-index: 10;
             filter: drop-shadow(0 5px 5px rgba(0,0,0,0.2)); animation: float 2.5s infinite ease-in-out;
         }
-        @keyframes float { 0%, 100% { transform: translateX(-50%) translateY(0); } 50% { transform: translateX(-50%) translateY(-12px); } }
+        @keyframes float { 0%, 100% { transform: translateX(-50%) translateY(0); } 50% { transform: translateX(-50%) translateY(-10px); } }
         
         .level-btn {
-            background-color: rgba(255, 255, 255, 0.95); border: 3px solid var(--primary-color); border-radius: 50%; 
-            width: 110px; height: 110px; font-size: 1.1em; cursor: pointer; transition: 0.2s; color: var(--primary-color);
+            background-color: #fff; border: 3px solid var(--primary-color); border-radius: 15px; /* 方形圓角更像行政機關 */
+            width: 120px; height: 100px; font-size: 1.1em; cursor: pointer; transition: 0.2s; color: var(--primary-color);
             display: flex; flex-direction: column; align-items: center; justify-content: center;
-            box-shadow: 0 8px 15px rgba(0,0,0,0.1); position: relative; z-index: 2;
+            box-shadow: 0 6px 0 var(--primary-color); position: relative; z-index: 2; margin-bottom: 6px;
         }
         .level-title { white-space: nowrap; font-weight: bold; margin-bottom: 5px; font-family: inherit; }
-        .level-btn:hover:not(:disabled) { background-color: #fff; transform: scale(1.1) translateY(-3px); box-shadow: 0 12px 20px rgba(0,0,0,0.15); border-color: var(--accent-color);}
-        .level-btn:disabled { background-color: #e9ecef; border-color: #ced4da; color: #adb5bd; cursor: not-allowed; box-shadow: none;}
-        .level-score { font-size: 0.9em; color: var(--correct-color); font-weight: bold; }
+        .level-btn:hover:not(:disabled) { transform: translateY(-3px); box-shadow: 0 9px 0 var(--primary-color); border-color: var(--secondary-color); }
+        .level-btn:active:not(:disabled) { transform: translateY(3px); box-shadow: 0 3px 0 var(--primary-color); }
+        .level-btn:disabled { background-color: #eceff1; border-color: #cfd8dc; color: #b0bec5; cursor: not-allowed; box-shadow: 0 6px 0 #b0bec5;}
+        .level-score { font-size: 0.9em; color: var(--correct-color); font-weight: bold; background: #e8f5e9; padding: 2px 8px; border-radius: 10px;}
 
-        .arrow-icon { font-size: 2.5em; color: var(--primary-color); margin: 0 10px; opacity: 0.8; z-index: 1; display: block; }
+        .arrow-icon { font-size: 2em; color: var(--primary-color); margin: 0 10px; opacity: 0.6; z-index: 1; display: block; }
         .arrow-right { animation: bounceRight 2s infinite; }
         .arrow-left { animation: bounceLeft 2s infinite; transform: scaleX(-1); }
-        .arrow-down { animation: bounceDown 2s infinite; font-size: 3em; line-height: 0.5; margin: -10px 0; }
+        .arrow-down { animation: bounceDown 2s infinite; font-size: 2.5em; line-height: 0.5; margin: -10px 0; }
         @keyframes bounceRight { 0%, 100% { transform: translateX(0); } 50% { transform: translateX(8px); } }
         @keyframes bounceLeft { 0%, 100% { transform: translateX(0) scaleX(-1); } 50% { transform: translateX(-8px) scaleX(-1); } }
         @keyframes bounceDown { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(8px); } }
-        .row-connector { width: 100%; display: flex; height: 50px; align-items: center; justify-content: flex-end; padding-right: 65px; box-sizing: border-box; }
-        .row-connector.left { justify-content: flex-start; padding-left: 65px; padding-right: 0; }
+        .row-connector { width: 100%; display: flex; height: 50px; align-items: center; justify-content: flex-end; padding-right: 70px; box-sizing: border-box; }
+        .row-connector.left { justify-content: flex-start; padding-left: 70px; padding-right: 0; }
 
         .collection-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 25px; padding: 15px; }
         .card-item {
-            position: relative; border-radius: 12px; overflow: hidden; box-shadow: 0 6px 12px rgba(0,0,0,0.1); aspect-ratio: 2/3; cursor: pointer; transition: 0.3s; background: #fff; border: none;
+            position: relative; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 8px rgba(0,0,0,0.1); aspect-ratio: 2/3; cursor: pointer; transition: 0.3s; background: #fff; border: 4px solid #fff;
         }
-        .card-item:hover { transform: scale(1.03) translateY(-5px); z-index: 5; box-shadow: 0 12px 24px rgba(0,0,0,0.15); }
+        .card-item:hover { transform: scale(1.05); z-index: 5; box-shadow: 0 10px 20px rgba(0,0,0,0.15); border-color: var(--secondary-color); }
         .card-img { width: 100%; height: 100%; object-fit: cover; transition: filter 0.3s; }
-        .card-item.locked .card-img { filter: grayscale(80%) opacity(0.6); }
-        .card-item.locked { cursor: default; background: #e9ecef; }
+        .card-item.locked .card-img { filter: grayscale(90%) opacity(0.5); }
+        .card-item.locked { cursor: default; background: #eceff1; }
         .card-overlay {
             position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.05);
-            display: flex; flex-direction: column; align-items: center; justify-content: center; color: #6c757d; text-align: center;
+            display: flex; flex-direction: column; align-items: center; justify-content: center; color: #78909c; text-align: center;
         }
-        .card-lock-icon { font-size: 3.5em; margin-bottom: 10px; color: var(--locked-color); opacity: 0.8;}
-        .card-label { position: absolute; bottom: 0; width: 100%; background: rgba(0, 86, 179, 0.85); color: #FFF; text-align: center; font-size: 1em; padding: 8px 0; font-weight: bold; }
+        .card-lock-icon { font-size: 3em; margin-bottom: 10px; color: var(--locked-color); opacity: 0.8;}
+        .card-label { position: absolute; bottom: 0; width: 100%; background: var(--primary-color); color: #FFF; text-align: center; font-size: 0.9em; padding: 6px 0; font-weight: bold; }
 
         .modal-overlay {
-            position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); z-index: 2000; display: none; justify-content: center; align-items: center; animation: fadeIn 0.3s;
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.85); z-index: 2000; display: none; justify-content: center; align-items: center; animation: fadeIn 0.3s;
         }
         .modal-content {
-            background: #FFF; padding: 20px; border-radius: 15px; max-width: 90%; max-height: 90%; position: relative; text-align: center; box-shadow: 0 15px 30px rgba(0,0,0,0.2); border: none;
+            background: #FFF; padding: 20px; border-radius: 10px; max-width: 90%; max-height: 90%; position: relative; text-align: center; box-shadow: 0 15px 30px rgba(0,0,0,0.3); border: 2px solid var(--secondary-color);
         }
-        .modal-img { max-width: 100%; max-height: 75vh; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);}
+        .modal-img { max-width: 100%; max-height: 75vh; border-radius: 5px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);}
         .modal-close {
             position: absolute; top: -15px; right: -15px; background: var(--wrong-color); color: white; border: 3px solid white; width: 36px; height: 36px; border-radius: 50%; font-size: 1.2em; font-weight: bold; cursor: pointer; box-shadow: 0 4px 8px rgba(0,0,0,0.2); display: flex; align-items: center; justify-content: center;
         }
 
         .question-box { 
             background-color: #FFF; 
-            border: 1px solid #e9ecef; border-left: 6px solid var(--primary-color);
-            padding: 25px; margin-bottom: 25px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            border: 1px solid #cfd8dc; border-top: 5px solid var(--primary-color);
+            padding: 25px; margin-bottom: 25px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.05);
         }
-        .question-text { font-size: 1.6em; font-weight: 600; line-height: 1.5; color: var(--text-color); }
+        .question-text { font-size: 1.5em; font-weight: 600; line-height: 1.6; color: var(--text-color); }
         
         .question-img { 
             max-width: 100%; 
@@ -201,39 +198,39 @@
             object-fit: contain; 
             display: block; 
             margin: 20px auto; 
-            border: none;
-            box-shadow: 0 6px 12px rgba(0,0,0,0.1); 
-            border-radius: 10px; 
+            border: 1px solid #ddd;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1); 
+            border-radius: 8px; 
             cursor: zoom-in; 
+            background-color: #fafafa;
         }
         
         .option-btn { 
-            width: 100%; padding: 18px 25px; margin: 12px 0; text-align: left; background: white; border: 2px solid #e9ecef; border-radius: 12px; 
-            cursor: pointer; transition: 0.2s; font-size: 1.4em; line-height: 1.4; font-family: inherit; position: relative; color: #495057;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            width: 100%; padding: 16px 20px; margin: 10px 0; text-align: left; background: white; border: 2px solid #cfd8dc; border-radius: 10px; 
+            cursor: pointer; transition: 0.2s; font-size: 1.3em; line-height: 1.4; font-family: inherit; position: relative; color: #455a64;
+            box-shadow: 0 2px 0 #cfd8dc;
         }
-        .option-btn:hover { background-color: #f8f9fa; border-color: var(--primary-color); transform: translateX(5px); }
-        .correct { background-color: #d4edda !important; border-color: var(--correct-color) !important; color: #155724 !important; font-weight:bold; box-shadow: 0 0 0 2px var(--correct-color) inset!important;}
-        .wrong { background-color: #f8d7da !important; border-color: var(--wrong-color) !important; color: #721c24 !important; box-shadow: 0 0 0 2px var(--wrong-color) inset!important;}
+        .option-btn:hover { background-color: #e8eaf6; border-color: var(--primary-color); color: var(--primary-color); transform: translateY(-2px); box-shadow: 0 4px 0 #c5cae9; }
+        .correct { background-color: #e8f5e9 !important; border-color: var(--correct-color) !important; color: #2e7d32 !important; font-weight:bold; box-shadow: 0 2px 0 #2e7d32 !important;}
+        .wrong { background-color: #ffebee !important; border-color: var(--wrong-color) !important; color: #c62828 !important; box-shadow: 0 2px 0 #c62828 !important;}
 
-        .progress-container { width: 100%; background-color: #e9ecef; border-radius: 50px; margin: 20px 0; height: 12px; overflow: hidden; box-shadow: inset 0 1px 3px rgba(0,0,0,0.1); }
-        .progress-bar { height: 100%; background-color: var(--primary-color); width: 0%; transition: width 0.4s ease; border-radius: 50px; background-image: linear-gradient(45deg, rgba(255,255,255,.15) 25%, transparent 25%, transparent 50%, rgba(255,255,255,.15) 50%, rgba(255,255,255,.15) 75%, transparent 75%, transparent); background-size: 1rem 1rem; animation: progress-bar-stripes 1s linear infinite;}
-        @keyframes progress-bar-stripes { from { background-position: 1rem 0; } to { background-position: 0 0; } }
+        .progress-container { width: 100%; background-color: #eceff1; border-radius: 50px; margin: 20px 0; height: 10px; overflow: hidden; }
+        .progress-bar { height: 100%; background-color: var(--secondary-color); width: 0%; transition: width 0.4s ease; border-radius: 50px; }
 
         .explanation-box, .review-item {
-            margin-top: 25px; padding: 25px; background-color: #e7f1ff; border: none; border-left: 5px solid var(--primary-color); border-radius: 12px; color: var(--text-color); font-size: 1.3em; text-align: left; line-height: 1.7;
+            margin-top: 25px; padding: 25px; background-color: #e8eaf6; border: none; border-left: 5px solid var(--primary-color); border-radius: 8px; color: var(--text-color); font-size: 1.2em; text-align: left; line-height: 1.7;
         }
-        .review-item { margin-bottom: 30px; background: white; border: 1px solid #e9ecef; border-left: 5px solid #adb5bd; box-shadow: 0 4px 8px rgba(0,0,0,0.05);}
-        .tag { padding: 5px 12px; border-radius: 30px; font-size: 0.85em; color: white; margin-right: 10px; vertical-align: middle; font-weight: bold;}
+        .review-item { margin-bottom: 25px; background: white; border: 1px solid #cfd8dc; border-left: 5px solid #90a4ae; box-shadow: 0 2px 5px rgba(0,0,0,0.05);}
+        .tag { padding: 4px 10px; border-radius: 4px; font-size: 0.8em; color: white; margin-right: 10px; vertical-align: middle; font-weight: bold;}
         .tag-correct { background-color: var(--correct-color); }
         .tag-wrong { background-color: var(--wrong-color); }
         #history-list { list-style: none; padding: 0; }
         #history-list li { 
-            background: white; margin: 18px 0; padding: 25px; border-radius: 15px; border: none; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; font-size: 1.2em; box-shadow: 0 6px 12px rgba(0,0,0,0.08); transition: transform 0.2s;
+            background: white; margin: 15px 0; padding: 20px; border-radius: 10px; border: 1px solid #cfd8dc; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; font-size: 1.1em; transition: transform 0.2s;
         }
-        #history-list li:hover { transform: translateY(-3px); box-shadow: 0 8px 16px rgba(0,0,0,0.12); }
-        .quiz-header { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; margin-bottom: 20px; border-bottom: 2px solid #e9ecef; padding-bottom: 15px; }
-        .header-controls { display: flex; align-items: center; gap: 12px; }
+        #history-list li:hover { transform: translateY(-2px); box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
+        .quiz-header { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; margin-bottom: 20px; border-bottom: 2px solid #eceff1; padding-bottom: 15px; }
+        .header-controls { display: flex; align-items: center; gap: 10px; }
     </style>
 </head>
 <body>
@@ -241,10 +238,10 @@
         <audio id="bgm-player"></audio>
         
         <div id="welcome-screen" class="fade-in">
-            <h1>公民素養挑戰：我國的地方政府</h1>
-            <div style="font-size: 5em; margin: 30px; text-align:center;">⚖️🗳️📖🏡</div>
-            <p style="font-size: 1.5em; text-align: center;">歡迎各位公民！請輸入你的名字，開始學習之旅！</p>
-            <div style="text-align:center;"><input type="text" id="username" placeholder="請輸入你的名字..." /></div>
+            <h1>公民素養挑戰：三上 4-2<br>我國中央政府各權力間如何互動</h1>
+            <div style="font-size: 5em; margin: 20px; text-align:center;">⚖️🏛️📜🤝</div>
+            <p style="font-size: 1.4em; text-align: center; color:#37474f;">探索五權分立與制衡的奧秘！</p>
+            <div style="text-align:center;"><input type="text" id="username" placeholder="請輸入您的大名..." /></div>
             <div class="avatar-selection">
                 <img src="images/avatar_boy1.png" class="avatar-option selected" onclick="selectAvatar('avatar_boy1.png', this)">
                 <img src="images/avatar_boy2.png" class="avatar-option" onclick="selectAvatar('avatar_boy2.png', this)">
@@ -257,20 +254,20 @@
         </div>
 
         <div id="level-screen" style="display: none; text-align: center;" class="fade-in">
-            <div style="background: rgba(255,255,255,0.95); padding:15px 30px; border-radius:50px; display:inline-block; margin-bottom:25px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
-                <h2 style="margin:0; color: var(--primary-color); font-size: 1.8em;">🗺️ 公民學習地圖</h2>
-                <p style="font-size: 1.3em; margin:10px 0 0 0; color: var(--text-color);">
+            <div style="background: rgba(255,255,255,0.95); padding:15px 30px; border-radius:10px; display:inline-block; margin-bottom:25px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); border-top: 4px solid var(--primary-color);">
+                <h2 style="margin:0; color: var(--primary-color); font-size: 1.6em;">🗺️ 權力互動學習地圖</h2>
+                <p style="font-size: 1.2em; margin:10px 0 0 0; color: var(--text-color);">
                     <img id="user-avatar-display" src="" style="width:40px; vertical-align:middle; border-radius:50%; border:2px solid var(--primary-color); margin-right: 10px;">
-                    公民楷模：<span id="display-name" style="color:var(--primary-color); font-weight:bold;"></span>
+                    公民代表：<span id="display-name" style="color:var(--primary-color); font-weight:bold;"></span>
                 </p>
             </div>
             <div id="level-map" class="level-map-container"></div>
-            <div style="margin-top: 30px; background: rgba(255,255,255,0.95); padding:25px; border-radius:20px; display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; box-shadow: 0 8px 20px rgba(0,0,0,0.1);">
+            <div style="margin-top: 30px; background: rgba(255,255,255,0.95); padding:20px; border-radius:15px; display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; box-shadow: 0 8px 20px rgba(0,0,0,0.1);">
                 <button id="btn-mistake" class="btn btn-red" onclick="startQuiz('mistake')" style="display:none;">📕 錯題複習 (<span id="mistake-count">0</span>)</button>
                 <button id="btn-favorite" class="btn btn-pink" onclick="startQuiz('favorite')" style="display:none;">💖 重點收藏 (<span id="favorite-count">0</span>)</button>
-                <button class="btn btn-blue" onclick="showCollection()">🎴 公民圖鑑</button>
+                <button class="btn btn-blue" onclick="showCollection()">🎴 憲政圖鑑</button>
                 <button class="btn btn-green" onclick="showHistory()">📜 學習紀錄</button>
-                <div style="display:inline-flex; gap:10px; align-items:center; background:#e9ecef; padding:8px 15px; border-radius:50px;">
+                <div style="display:inline-flex; gap:8px; align-items:center; background:#eceff1; padding:5px 12px; border-radius:50px;">
                     <button id="btn-music-main" class="btn btn-sm btn-music" onclick="toggleMusic()" title="播放/靜音">🎵</button>
                     <button class="btn btn-sm btn-music" onclick="nextTrack()" title="下一首">⏭️</button>
                 </div>
@@ -280,16 +277,16 @@
 
         <div id="quiz-content" style="display: none;" class="fade-in">
             <div class="quiz-header">
-                <h3 id="level-title" style="margin:0; font-size: 1.6em; color: var(--primary-color); background: #e7f1ff; padding: 5px 15px; border-radius: 30px;">第 X 關</h3>
+                <h3 id="level-title" style="margin:0; font-size: 1.4em; color: var(--primary-color); background: #e8eaf6; padding: 5px 15px; border-radius: 8px;">第 X 關</h3>
                 <div class="header-controls">
-                    <button id="btn-toggle-favorite" class="btn btn-sm" style="background-color:#FFF; border:2px solid var(--favorite-color); color:var(--favorite-color); font-size:1.3em; padding: 6px 12px;" onclick="toggleFavorite()" title="收藏/取消">🤍</button>
+                    <button id="btn-toggle-favorite" class="btn btn-sm" style="background-color:#FFF; border:1px solid var(--favorite-color); color:var(--favorite-color); font-size:1.2em; padding: 4px 10px;" onclick="toggleFavorite()" title="收藏/取消">🤍</button>
                     <button id="btn-music-quiz" class="btn btn-sm btn-music" style="margin:0;" onclick="toggleMusic()" title="播放/靜音">🎵</button>
                     <button class="btn btn-sm btn-music" style="margin:0;" onclick="nextTrack()" title="下一首">⏭️</button>
                     <button class="btn btn-gray btn-sm" style="margin:0;" onclick="exitQuiz()">🏠 地圖</button>
                 </div>
             </div>
             <div class="progress-container"><div id="progress-bar" class="progress-bar"></div></div>
-            <div style="text-align: right; font-size: 1.2em; color: var(--text-color); font-weight: bold; margin-bottom: 10px;">進度: <span id="current-q-num">1</span> / <span id="total-q-num">20</span></div>
+            <div style="text-align: right; font-size: 1.1em; color: var(--text-color); font-weight: bold; margin-bottom: 10px;">進度: <span id="current-q-num">1</span> / <span id="total-q-num">20</span></div>
             <div id="question-container" class="fade-in">
                 <div class="question-box">
                     <div id="question-text" class="question-text">載入中...</div>
@@ -297,19 +294,19 @@
                 </div>
                 <ul id="options-list" style="list-style: none; padding: 0;"></ul>
             </div>
-            <div id="explanation" class="explanation-box" style="display: none;"><strong>💡 重點解析：</strong> <span id="explanation-text"></span></div>
+            <div id="explanation" class="explanation-box" style="display: none;"><strong>💡 詳解與觀念：</strong> <span id="explanation-text"></span></div>
             <button id="next-btn" class="btn" style="display: none; width: 100%; margin-top: 30px;" onclick="nextQuestion()">下一題 ➡️</button>
         </div>
 
         <div id="score-box" style="display: none; text-align: center;" class="fade-in">
             <h2 style="color: var(--primary-color); font-size: 2.2em;">🎉 挑戰完成！</h2>
-            <p style="font-size: 1.8em; margin: 15px 0; font-weight: bold; color: var(--text-color);">公民楷模：<span id="final-name"></span></p>
-            <p style="font-size: 5em; margin: 10px 0; font-weight: bold; color: var(--accent-color); font-family: 'Noto Sans TC', sans-serif; text-shadow: 2px 2px 0px #d35400;"><span id="final-score"></span> 分</p>
-            <div id="score-comment" style="font-size: 1.6em; margin-bottom: 30px; color: var(--secondary-color); font-weight: bold;"></div>
-            <div id="unlock-msg" style="color: var(--correct-color); font-weight: bold; display:none; margin-bottom: 20px; font-size: 1.6em; background: #d4edda; padding: 10px; border-radius: 10px;">🔓 下一關已解鎖！</div>
-            <div id="new-card-alert" style="display:none; background:#fff3cd; border:2px solid var(--accent-color); border-radius:15px; padding:15px; margin: 20px 0; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
-                 <h3 style="margin:5px; color: #856404; font-size: 1.5em;">✨ 獲得新公民圖鑑！ ✨</h3>
-                 <p style="font-size: 1.3em; color: #856404;">快去「圖鑑」查看你的收藏！</p>
+            <p style="font-size: 1.6em; margin: 15px 0; font-weight: bold; color: var(--text-color);">公民代表：<span id="final-name"></span></p>
+            <p style="font-size: 5em; margin: 10px 0; font-weight: bold; color: var(--secondary-color); font-family: 'Noto Sans TC', sans-serif; text-shadow: 2px 2px 0px rgba(0,0,0,0.2);"><span id="final-score"></span> 分</p>
+            <div id="score-comment" style="font-size: 1.5em; margin-bottom: 30px; color: var(--accent-color); font-weight: bold;"></div>
+            <div id="unlock-msg" style="color: var(--correct-color); font-weight: bold; display:none; margin-bottom: 20px; font-size: 1.4em; background: #e8f5e9; padding: 10px; border-radius: 8px;">🔓 下一關已解鎖！</div>
+            <div id="new-card-alert" style="display:none; background:#fff8e1; border:2px solid var(--secondary-color); border-radius:10px; padding:15px; margin: 20px 0; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
+                 <h3 style="margin:5px; color: #f57f17; font-size: 1.4em;">✨ 獲得新憲政圖鑑！ ✨</h3>
+                 <p style="font-size: 1.2em; color: #555;">快去「圖鑑」查看你的收藏！</p>
             </div>
             <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-top: 30px;">
                 <button class="btn" onclick="goToLevelScreen()">🗺️ 返回地圖</button>
@@ -330,14 +327,14 @@
 
         <div id="history-detail-screen" style="display: none;" class="fade-in">
             <h3 style="color: var(--primary-color);">📜 歷史測驗回顧</h3>
-            <p style="font-size: 1.3em; color: var(--text-color); background: #e9ecef; padding: 10px; border-radius: 10px; display: inline-block;">時間：<span id="history-date" style="font-weight:bold;"></span> | 成績：<span id="history-score" style="font-weight:bold; color: var(--accent-color);"></span></p>
+            <p style="font-size: 1.2em; color: var(--text-color); background: #eceff1; padding: 10px; border-radius: 8px; display: inline-block;">時間：<span id="history-date" style="font-weight:bold;"></span> | 成績：<span id="history-score" style="font-weight:bold; color: var(--secondary-color);"></span></p>
             <ul id="history-review-list" class="review-list" style="margin-top: 25px;"></ul>
             <div style="text-align:center; margin-top: 30px;"><button class="btn" onclick="showHistory()">⬅️ 返回列表</button></div>
         </div>
 
         <div id="collection-screen" style="display: none;" class="fade-in">
-            <h2 style="color: var(--primary-color);">🎴 公民圖鑑</h2>
-            <p style="text-align:center; color:var(--text-color); font-size: 1.3em; background: #e9ecef; padding: 10px; border-radius: 30px; display: inline-block;">測驗達 80 分即可解鎖該關卡圖鑑！</p>
+            <h2 style="color: var(--primary-color);">🎴 憲政圖鑑</h2>
+            <p style="text-align:center; color:var(--text-color); font-size: 1.2em; background: #eceff1; padding: 10px; border-radius: 20px; display: inline-block;">測驗達 80 分即可解鎖該關卡圖鑑！</p>
             <div id="collection-grid" class="collection-grid" style="margin-top: 30px;"></div>
             <div style="text-align:center; margin-top:30px;"><button class="btn" onclick="goToLevelScreen()">🗺️ 返回地圖</button></div>
         </div>
@@ -346,16 +343,18 @@
             <div class="modal-content" onclick="event.stopPropagation()">
                 <button class="modal-close" onclick="closeCardModal()">×</button>
                 <img id="modal-img" class="modal-img" src="">
-                <h3 id="modal-title" style="margin-top:15px; color: var(--primary-color); font-size: 1.5em;"></h3>
+                <h3 id="modal-title" style="margin-top:15px; color: var(--primary-color); font-size: 1.4em;"></h3>
             </div>
         </div>
     </div>
 
     <script>
-        const LEVEL_CONFIG = [20, 20, 20, 20, 20, 20, 20, 20, 10]; 
+        // 🟢 關卡設定：配合 75 題 (20, 20, 20, 15)
+        const LEVEL_CONFIG = [20, 20, 20, 15]; 
         const ITEMS_PER_ROW = 3; 
         const PLAYLIST = ['sounds/bgm1.mp3', 'sounds/bgm2.mp3', 'sounds/bgm3.mp3'];
-        const APP_PREFIX = 'citizen3-L5_'; 
+        // 🟢 更新 APP Key 避免資料衝突
+        const APP_PREFIX = 'citizen3-4-2_'; 
 
         let currentTrackIndex = 0; let isPlaying = false;
         let allQuestions = [], currentQuizQuestions = [], currentQuestionIndex = 0, score = 0;
@@ -378,7 +377,7 @@
         function getSavedUsers() { return JSON.parse(localStorage.getItem(APP_PREFIX + 'savedUsers')) || []; }
         function renderQuickLogin() {
             let users = getSavedUsers(); let container = document.getElementById('quick-login-area'); container.innerHTML = "";
-            if(users.length > 0) { container.innerHTML = '<div style="width:100%; text-align:center; color:var(--text-color); font-size:1em; margin-bottom:10px;">-- 快速登入 --</div>'; users.forEach(userObj => { let name = typeof userObj === 'string' ? userObj : userObj.name; let avatar = typeof userObj === 'string' ? 'avatar_boy1.png' : userObj.avatar; let div = document.createElement('div'); div.innerHTML = `<span class="user-tag" onclick="quickLogin('${name}', '${avatar}')"><img src="images/${avatar}" style="width:30px; height:30px; border-radius:50%; margin-right:8px; border:2px solid var(--primary-color);">${name}<span class="delete-user" onclick="event.stopPropagation(); deleteUser('${name}')">×</span></span>`; container.appendChild(div); }); }
+            if(users.length > 0) { container.innerHTML = '<div style="width:100%; text-align:center; color:var(--text-color); font-size:1em; margin-bottom:10px;">-- 快速登入 --</div>'; users.forEach(userObj => { let name = typeof userObj === 'string' ? userObj : userObj.name; let avatar = typeof userObj === 'string' ? 'avatar_boy1.png' : userObj.avatar; let div = document.createElement('div'); div.innerHTML = `<span class="user-tag" onclick="quickLogin('${name}', '${avatar}')"><img src="images/${avatar}" style="width:30px; height:30px; border-radius:50%; margin-right:8px; border:1px solid var(--primary-color);">${name}<span class="delete-user" onclick="event.stopPropagation(); deleteUser('${name}')">×</span></span>`; container.appendChild(div); }); }
         }
         function quickLogin(name, avatar) { document.getElementById('username').value = name; currentAvatar = avatar; document.querySelectorAll('.avatar-option').forEach(el => { if(el.getAttribute('onclick').includes(avatar)) el.classList.add('selected'); else el.classList.remove('selected'); }); loginAndStart(); }
         function deleteUser(name) { if (!confirm(`確定要刪除「${name}」的所有學習資料嗎？`)) return; localStorage.removeItem(APP_PREFIX + name + '_mistakeBank'); localStorage.removeItem(APP_PREFIX + name + '_favoriteBank'); localStorage.removeItem(APP_PREFIX + name + '_quizHistory'); localStorage.removeItem(APP_PREFIX + name + '_quizProgress'); let users = getSavedUsers(); users = users.filter(u => (typeof u === 'string' ? u : u.name) !== name); localStorage.setItem(APP_PREFIX + 'savedUsers', JSON.stringify(users)); renderQuickLogin(); }
@@ -414,7 +413,7 @@
         function toggleFavorite() { const currentQ = currentQuizQuestions[currentQuestionIndex]; let favs = getFavoriteBank(); if (favs.includes(currentQ.id)) { favs = favs.filter(id => id !== currentQ.id); } else { favs.push(currentQ.id); } localStorage.setItem(getUserKey('favoriteBank'), JSON.stringify(favs)); updateFavoriteUI(); }
         function updateFavoriteUI() { const currentQ = currentQuizQuestions[currentQuestionIndex]; let favs = getFavoriteBank(); let btn = document.getElementById('btn-toggle-favorite'); if (favs.includes(currentQ.id)) { btn.innerText = '❤️'; } else { btn.innerText = '🤍'; } }
         
-        // 🔹 修正 1：答題時的比對邏輯
+        // 🔹 嚴格判斷邏輯：答題時
         function checkAnswer(btn, selectedOption, questionData) {
             const buttons = document.querySelectorAll('.option-btn'); buttons.forEach(button => button.disabled = true); userAnswers[questionData.id] = selectedOption;
             
@@ -425,7 +424,7 @@
                 btn.classList.add('correct'); 
                 score++; 
                 audioCorrect.play().catch(e=>{}); 
-                confetti({ particleCount: 100, spread: 70, origin: { y: 0.6 }, colors: ['#28a745', '#ffc107', '#0056b3'] }); 
+                confetti({ particleCount: 100, spread: 70, origin: { y: 0.6 }, colors: ['#2e7d32', '#f9a825', '#1a237e'] }); 
                 if (isMistakeMode) removeFromMistakeBank(questionData.id); 
             } else { 
                 btn.classList.add('wrong'); 
@@ -444,9 +443,9 @@
         function nextQuestion() { currentQuestionIndex++; let progress = ((currentQuestionIndex) / currentQuizQuestions.length) * 100; document.getElementById('progress-bar').style.width = progress + "%"; if (currentQuestionIndex < currentQuizQuestions.length) loadQuestion(); else setTimeout(showResult, 500); }
         function showResult() {
             document.getElementById('quiz-content').style.display = 'none'; document.getElementById('score-box').style.display = 'block'; let finalScore = Math.round((score / currentQuizQuestions.length) * 100); document.getElementById('final-score').innerText = finalScore; document.getElementById('final-name').innerText = userName; let comment = "", progress = getProgress(), isPass = finalScore >= 80;
-            if(finalScore === 100) comment = "🏆 太棒了！你是頂尖的公民知識家！"; else if(finalScore >= 90) comment = "🌟 非常優秀！你的公民素養很高喔！"; else if(finalScore >= 80) comment = "🎉 通過挑戰！繼續保持學習熱忱！"; else comment = "💪 加油！多複習幾次，你一定可以的！";
+            if(finalScore === 100) comment = "🏆 太棒了！憲政達人非你莫屬！"; else if(finalScore >= 90) comment = "🌟 表現優異！對五權運作非常熟悉！"; else if(finalScore >= 80) comment = "🎉 通過挑戰！公民素養槓槓的！"; else comment = "💪 加油！多複習觀念，下次會更好！";
             document.getElementById('score-comment').innerText = comment; let unlockMsg = document.getElementById('unlock-msg'); let newCardAlert = document.getElementById('new-card-alert'); let gotNewCard = false;
-            if (!isMistakeMode && !isFavoriteMode && isPass) { if (finalScore >= 80) { let oldScore = progress.levelScores[currentLevel]; if (oldScore === undefined || oldScore < 80) { gotNewCard = true; } } if (currentLevel === progress.maxLevel && currentLevel < LEVEL_CONFIG.length) { unlockMsg.style.display = 'block'; } else unlockMsg.style.display = 'none'; confetti({ particleCount: 200, spread: 150, colors: ['#28a745', '#ffc107', '#0056b3', '#e83e8c'] }); } else { unlockMsg.style.display = 'none'; }
+            if (!isMistakeMode && !isFavoriteMode && isPass) { if (finalScore >= 80) { let oldScore = progress.levelScores[currentLevel]; if (oldScore === undefined || oldScore < 80) { gotNewCard = true; } } if (currentLevel === progress.maxLevel && currentLevel < LEVEL_CONFIG.length) { unlockMsg.style.display = 'block'; } else unlockMsg.style.display = 'none'; confetti({ particleCount: 200, spread: 150, colors: ['#2e7d32', '#f9a825', '#1a237e', '#ad1457'] }); } else { unlockMsg.style.display = 'none'; }
             if(gotNewCard) newCardAlert.style.display = 'block'; else newCardAlert.style.display = 'none';
             if (!isMistakeMode && !isFavoriteMode) saveProgress(currentLevel, finalScore);
             let modeName = `第 ${currentLevel} 關`; if(isMistakeMode) modeName = "錯題複習"; if(isFavoriteMode) modeName = "重點收藏";
@@ -462,7 +461,7 @@
         function removeFromMistakeBank(id) { let mistakes = getMistakeBank(); mistakes = mistakes.filter(mId => mId !== id); localStorage.setItem(getUserKey('mistakeBank'), JSON.stringify(mistakes)); }
         function toggleReview() { let reviewArea = document.getElementById('full-review-area'); reviewArea.style.display = (reviewArea.style.display === 'none') ? 'block' : 'none'; if (reviewArea.style.display === 'block') reviewArea.scrollIntoView({ behavior: 'smooth' }); }
         
-        // 🔹 修正 2：詳解回顧時的比對邏輯
+        // 🔹 嚴格判斷邏輯：回顧時
         function renderReviewList(elementId, questionsData, answersData) { 
             let list = document.getElementById(elementId); list.innerHTML = ""; 
             questionsData.forEach((q, index) => { 
@@ -483,11 +482,11 @@
                                     <span class="tag ${tagClass}">${tagText}</span> ${index + 1}. ${q.question}
                                 </div>`; 
                 if (q.image) html += `<img src="${q.image}" style="max-height:200px; display:block; margin:15px auto; border-radius:8px; box-shadow:0 4px 8px rgba(0,0,0,0.1);">`; 
-                html += `<div style="font-size:1em; color:var(--text-color); background:#f8f9fa; padding:15px; border-radius:10px; margin-bottom:15px;">
+                html += `<div style="font-size:1.1em; color:var(--text-color); background:#f5f5f6; padding:15px; border-radius:10px; margin-bottom:15px;">
                             你的答案：${userAns || "未作答"} <br> 
                             <span style="color:var(--correct-color); font-weight:bold;">正確答案：${correctAns}</span>
                          </div>
-                         <div style="background:#e7f1ff; padding:15px; border-left:5px solid var(--primary-color); border-radius:10px; font-size:1em; color:var(--text-color); line-height:1.6;">
+                         <div style="background:#e8eaf6; padding:15px; border-left:5px solid var(--primary-color); border-radius:10px; font-size:1.1em; color:var(--text-color); line-height:1.6;">
                             💡 ${q.explanation || "暫無解析"}
                          </div>
                     </li>`; 
@@ -496,7 +495,7 @@
         }
 
         function saveHistory(name, score, questionsData, answersData, modeName) { let history = JSON.parse(localStorage.getItem(getUserKey('quizHistory'))) || []; let record = { id: Date.now(), name: name, score: score, date: new Date().toLocaleString(), mode: modeName, answers: answersData, questionIds: questionsData.map(q => q.id) }; history.push(record); localStorage.setItem(getUserKey('quizHistory'), JSON.stringify(history)); }
-        function showHistory() { document.querySelectorAll('.quiz-container > div').forEach(el => el.style.display = 'none'); document.getElementById('history-screen').style.display = 'block'; let history = JSON.parse(localStorage.getItem(getUserKey('quizHistory'))) || []; let list = document.getElementById('history-list'); list.innerHTML = ""; if(history.length === 0) list.innerHTML = "<li style='justify-content:center; background:none; box-shadow:none; color:#adb5bd;'>目前沒有學習紀錄</li>"; else { history.reverse().forEach(rec => { let li = document.createElement('li'); li.innerHTML = `<div class="history-info" style="color:var(--text-color);"><strong style="font-size:1.2em; color:var(--primary-color);">${rec.mode}</strong> <br> <span style="color:${rec.score>=80?'var(--correct-color)':'var(--wrong-color)'}; font-weight:bold; font-size:1.4em;">${rec.score}分</span><br><small style="color:#6c757d">${rec.date}</small></div><div class="history-actions"><button class="btn btn-green btn-sm" onclick="replayHistory(${rec.id})">查看</button><button class="btn btn-red btn-sm" onclick="deleteHistoryItem(${rec.id})">刪除</button></div>`; list.appendChild(li); }); } }
+        function showHistory() { document.querySelectorAll('.quiz-container > div').forEach(el => el.style.display = 'none'); document.getElementById('history-screen').style.display = 'block'; let history = JSON.parse(localStorage.getItem(getUserKey('quizHistory'))) || []; let list = document.getElementById('history-list'); list.innerHTML = ""; if(history.length === 0) list.innerHTML = "<li style='justify-content:center; background:none; box-shadow:none; color:#90a4ae;'>目前沒有學習紀錄</li>"; else { history.reverse().forEach(rec => { let li = document.createElement('li'); li.innerHTML = `<div class="history-info" style="color:var(--text-color);"><strong style="font-size:1.2em; color:var(--primary-color);">${rec.mode}</strong> <br> <span style="color:${rec.score>=80?'var(--correct-color)':'var(--wrong-color)'}; font-weight:bold; font-size:1.4em;">${rec.score}分</span><br><small style="color:#607d8b">${rec.date}</small></div><div class="history-actions"><button class="btn btn-green btn-sm" onclick="replayHistory(${rec.id})">查看</button><button class="btn btn-red btn-sm" onclick="deleteHistoryItem(${rec.id})">刪除</button></div>`; list.appendChild(li); }); } }
         function deleteHistoryItem(id) { if(!confirm("確定要刪除這筆紀錄嗎？")) return; let history = JSON.parse(localStorage.getItem(getUserKey('quizHistory'))) || []; history = history.filter(r => r.id !== id); localStorage.setItem(getUserKey('quizHistory'), JSON.stringify(history)); showHistory(); }
         function replayHistory(recordId) { let history = JSON.parse(localStorage.getItem(getUserKey('quizHistory'))) || []; let record = history.find(r => r.id === recordId); if (!record) return; document.querySelectorAll('.quiz-container > div').forEach(el => el.style.display = 'none'); document.getElementById('history-detail-screen').style.display = 'block'; document.getElementById('history-date').innerText = record.date; document.getElementById('history-score').innerText = record.score; let examQuestions = allQuestions.filter(q => record.questionIds.includes(q.id)); renderReviewList('history-review-list', examQuestions, record.answers); }
     </script>
